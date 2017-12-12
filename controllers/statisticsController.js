@@ -3,7 +3,6 @@ var SystemController = require('./systemController');
 module.exports = {
     getCurrentStats(req, res) {
         SystemController.getCurrentStats(stats => {
-            console.log(stats);
             res.status(200);
             res.json(stats);
         });
