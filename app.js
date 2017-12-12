@@ -44,4 +44,6 @@ routes(app);
 
 server.listen(3001);
 
+module.exports = app;
+
 
