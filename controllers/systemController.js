@@ -7,14 +7,13 @@ module.exports = {
         system.currentLoad(data => {
             var cpu = Math.round(data.currentload);
             system.mem(memory => {
+                var ram = memory.used;
                 var stats = new Stats({
                     cpuLoad: cpu,
-                    ramUsage: memory.used
+                    ramUsage: ram
                 });
-                console.log(stats);
                 Stats.create(stats)
                     .then(result => {
-                        console.log(result);
                         callback(result);
                     });
             })
