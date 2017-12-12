@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+var system = require('systeminformation');
+var routes = require('./routes/routes');
 
 app.use(express.static(__dirname + '/node_modules'));
 
@@ -14,6 +16,11 @@ io.on('connection', function(cSocket) {
   })
 })
 
-server.listen(6000);
+system.currentLoad(data => {
+    console.log(typeof data.currentload);
+});
+routes(app);
+
+server.listen(8080);
 
 
