@@ -1,1 +1,3 @@
 Server api to send stats over a socket
+
+the sole function of this test is to be able to make a new commit and test some stuff...
