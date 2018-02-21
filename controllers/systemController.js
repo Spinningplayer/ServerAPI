@@ -12,10 +12,11 @@ module.exports = {
                     cpuLoad: cpu,
                     ramUsage: ram
                 });
-                Stats.create(stats)
-                    .then(result => {
-                        callback(result);
-                    });
+                callback(stats);
+                //Stats.create(stats)
+                //    .then(result => {
+                //        callback(result);
+                //    });
             })
         })
     },
