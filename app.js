@@ -5,6 +5,7 @@ var io = require('socket.io')(server);
 var system = require('systeminformation');
 var routes = require('./routes/routes');
 var systemController = require('./controllers/systemController');
+var config = require('./Config/env/env')
 
 app.use(express.static(__dirname + '/node_modules'));
 
@@ -42,7 +43,7 @@ io.on('connection', function(cSocket) {
 
 routes(app);
 
-server.listen(3001);
+server.listen(config.env.webPort);
 
 module.exports = app;
 
